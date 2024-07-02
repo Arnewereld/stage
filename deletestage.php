@@ -4,7 +4,7 @@ include 'stage.php';
 try {
    $db = new zaak($myDb);
     $db->deletezaak($_GET['id']);
-    header("Location:viewtelefoon.php");
+    header("Location:selectstage.php");
 } catch (Exception $e) {
     echo "Error: " . $e->getMessage();
   }

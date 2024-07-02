@@ -19,10 +19,10 @@ class zaak {
         return $result; 
 }
 
-public function updatetezaak($naam, $aantal) {
-    $stmt = $this->dbh->execute("UPDATE zaak SET naam = ?, aantal = ?
-    WHERE telefoon_id = ?", [$naam, $aantal]);
-} 
+public function updatetezaak($naam, $aantal, $user, $id) {
+    $stmt = $this->dbh->execute("UPDATE zaak SET naam = ?, aantal = ?, user = ?
+    WHERE id = ?", [$naam, $aantal, $user, $id]);
+}
 
 public function deletezaak(int $id) {
     $stmt = $this->dbh->execute("DELETE from zaak WHERE id = ?", [$id]);
