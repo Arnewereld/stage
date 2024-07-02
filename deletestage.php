@@ -3,7 +3,7 @@ include 'stage.php';
 
 try {
    $db = new zaak($myDb);
-    $db->deletetezaak($_GET['id']);
+    $db->deletezaak($_GET['id']);
     header("Location:viewtelefoon.php");
 } catch (Exception $e) {
     echo "Error: " . $e->getMessage();

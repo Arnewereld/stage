@@ -1,7 +1,7 @@
 <?php
     include "telefoon.php";
 
-    $dbtelefoons = new zaak(new DB());
+    $dbtelefoons = new (new DB());
 ?>
 
 <!DOCTYPE html>
@@ -15,25 +15,22 @@
 <body>
     <table class="table dark">
         <tr>
-            <th>telefoon_id</th>
-            <th>merk</th>
-            <th>model</th>
-            <th>opslag </th>
-            <th>prijs</th>
-            <th colspan="2">Action</th>
+            <th>id</th>
+            <th>naam</th>
+            <th>aantal</th>
+            <th>user</th>
         </tr>
 
         <tr> <?php
-            $telefoon = $dbtelefoons->selectzaak(); 
+            $stage = $dbzaak->selectzaak(); 
             if ($telefoon) { 
                 foreach ($telefoon as $telefoons) {?>
-            <td><?php echo $telefoons['telefoon_id']?></td>
-            <td><?php echo $telefoons['model']?></td>
-            <td><?php echo $telefoons['merk']?></td>
-            <td><?php echo $telefoons['opslag']?></td>
-            <td><?php echo $telefoons['prijs']?></td>
-            <td><a href="edittelefoon.php?telefoon_id=  <?php echo $telefoons['telefoon_id']?>">Edit</a></td>
-            <td><a href="deletetelefoon.php?telefoon_id=  <?php echo $telefoons['telefoon_id']?>">Delete</a></td>
+            <td><?php echo $telefoons['id']?></td>
+            <td><?php echo $telefoons['naam']?></td>
+            <td><?php echo $telefoons['aantal']?></td>
+            <td><?php echo $telefoons['user']?></td>
+            <td><a href="updatestage.php?id=  <?php echo $zaak['id']?>">Edit</a></td>
+            <td><a href="deletestage.php?id=  <?php echo $zaak['id']?>">Delete</a></td>
            <td></td>
         </tr> <?php } }?>
     </table>
